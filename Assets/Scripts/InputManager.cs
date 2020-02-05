@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
     public LayerMask layerMask;
     public GameObject cube;
 
+    public List<GameObject> cubeList;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class InputManager : MonoBehaviour
                 if (hit.collider != null)
                 {
                 //    Debug.Log(hit.point);
-                   cube.Spawn(hit.point + new Vector3(0.0f, 0.5f, 0.0f));
+                   cubeList.Add(cube.Spawn(hit.point + new Vector3(0.0f, 0.5f, 0.0f)));
                 }
             }
         }
