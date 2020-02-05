@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Update () {
         int count = inputManager.cubeList.Count;
-        Debug.Log(count);
+        // Debug.Log(count);
         if (count > 0) {
             if (!isStartGame) {
                 isStartGame = true;
