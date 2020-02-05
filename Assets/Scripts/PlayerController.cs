@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private int count;
+    private bool isStartGame = false;
 
     void Start ()
     {
@@ -20,15 +21,22 @@ public class PlayerController : MonoBehaviour
         count = 0;
         SetCountText ();
         winText.text = "";
+        isStartGame = false;
     } 
 
     void Update () {
         int count = inputManager.cubeList.Count;
         Debug.Log(count);
         if (count > 0) {
+            if (!isStartGame) {
+                isStartGame = true;
+                winText.text = "";
+            }
+            
+
             GameObject cube = inputManager.cubeList[0];
             Vector3 target = cube.transform.position;
-            Debug.Log(count + " - " + target);
+            //Debug.Log(count + " - " + target);
 
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
         }
@@ -68,9 +76,10 @@ public class PlayerController : MonoBehaviour
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString ();
-        // if (count >= 12)
-        // {
-        //     winText.text = "You Win!";
-        // }
+        if (isStartGame && inputManager.cubeList.Count == 0)
+        {
+            winText.text = "You Win!";
+            isStartGame = false;
+        }
     }
 }
