@@ -243,7 +243,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  cube: {fileID: 4468869925702402349, guid: e59022f0a67293d4c80c43fc52ba3122, type: 3}
+  cube: {fileID: 7208285476572642715, guid: e59022f0a67293d4c80c43fc52ba3122, type: 3}
   cubeList: []
 --- !u!4 &138588964
 Transform:
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99dad8dff1cb0a544863ad527c0d9d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4468869925702402349, guid: e59022f0a67293d4c80c43fc52ba3122, type: 3}
+  prefab: {fileID: 7208285476572642715, guid: e59022f0a67293d4c80c43fc52ba3122, type: 3}
   initialPoolsize: 10
 --- !u!1 &705507993
 GameObject:

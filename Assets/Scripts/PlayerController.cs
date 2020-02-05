@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
                 winText.text = "";
             }
             
-
             GameObject cube = inputManager.cubeList[0];
             Vector3 target = cube.transform.position;
             //Debug.Log(count + " - " + target);
@@ -60,6 +59,11 @@ public class PlayerController : MonoBehaviour
             foreach(GameObject objet in inputManager.cubeList) {
 
                 if(GameObject.ReferenceEquals(other.gameObject, objet)) {
+
+                    Color c = other.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
+                    transform.GetComponent<Renderer>().material.color = c;
+                    // Debug.Log("color: "+c);
+
                     //Debug.Log(inputManager.cubeList.IndexOf(objet));
                     other.gameObject.SetActive(false);
                     inputManager.cubeList.RemoveAt(inputManager.cubeList.IndexOf(objet));
