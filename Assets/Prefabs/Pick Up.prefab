@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 7208285476572642711}
   - component: {fileID: 7208285476572642710}
   - component: {fileID: 7208285476572642709}
-  - component: {fileID: 7208285476572642708}
   - component: {fileID: 6997161296582166014}
   - component: {fileID: 8403248603458177412}
-  - component: {fileID: 6488672171166219336}
+  - component: {fileID: 8526369955449671821}
   m_Layer: 0
   m_Name: Pick Up
   m_TagString: Pick Up
@@ -95,18 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7208285476572642708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7208285476572642715}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c61710932906934f90ef122dcfa1fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &6997161296582166014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142,18 +129,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &6488672171166219336
-Animation:
+--- !u!114 &8526369955449671821
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7208285476572642715}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 968972ca485a88d4d933878e71dc4462, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c13af93f95624243a8cebf8a5052602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

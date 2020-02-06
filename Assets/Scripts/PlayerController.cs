@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private int count;
     private bool isStartGame = false;
 
+    private Animator animator;
+
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
         SetCountText ();
         winText.text = "";
         isStartGame = false;
+
+        animator = GetComponent<Animator>();
     } 
 
     void Update () {
@@ -38,7 +42,15 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(count + " - " + target);
 
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            //animator.ResetTrigger("GrowUp");
+            animator.SetTrigger("Run");
+        } else {
+            // animator.ResetTrigger("GrowUp");
+            animator.ResetTrigger("Run");
+            animator.SetTrigger("Idle");
         }
+
+        
     }
 
     // void FixedUpdate()
@@ -61,12 +73,17 @@ public class PlayerController : MonoBehaviour
                 if(GameObject.ReferenceEquals(other.gameObject, objet)) {
 
                     Color c = other.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
-                    transform.GetComponent<Renderer>().material.color = c;
+                    GetComponent<Renderer>().material.color = c;
                     // Debug.Log("color: "+c);
 
+                    // animator.ResetTrigger("Run");
+                    animator.ResetTrigger("GrowUp");
+                    animator.SetTrigger("GrowUp");
+
                     //Debug.Log(inputManager.cubeList.IndexOf(objet));
-                    other.gameObject.SetActive(false);
+                    // other.gameObject.SetActive(false);
                     inputManager.cubeList.RemoveAt(inputManager.cubeList.IndexOf(objet));
+                    //objet.Kill();
 
                     count = count + 1;
                     SetCountText ();
@@ -82,7 +99,7 @@ public class PlayerController : MonoBehaviour
         countText.text = "Count: " + count.ToString ();
         if (isStartGame && inputManager.cubeList.Count == 0)
         {
-            winText.text = "You Win!";
+            winText.text = "Score: " + count.ToString ();
             isStartGame = false;
         }
     }
