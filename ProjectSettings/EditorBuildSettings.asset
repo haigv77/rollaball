@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CinematicSwat.unity
+    guid: 20adb2ec774df864b97758e5140e4ba1
   m_configObjects: {}

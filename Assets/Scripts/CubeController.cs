@@ -27,11 +27,13 @@ public class CubeController : MonoBehaviour
             animator.Play("Rotate");
         }
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("DestroyCube") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
-        {
-            gameObject.SetActive(false);
-            gameObject.Kill();
-        }
+        // if (animator.GetCurrentAnimatorStateInfo(0).IsName("DestroyCube") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+        // {
+        //     gameObject.SetActive(false);
+        //     // gameObject.Kill();
+        //     transform.parent.gameObject.SetActive(false);
+        //     //transform.parent.gameObject.Kill();
+        // }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             // animator.Stop("Rotate");
@@ -39,10 +41,12 @@ public class CubeController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other) 
-    {
-        if (other.gameObject.CompareTag ("Player")) {
-            animator.SetTrigger("DestroyCube");
-        }
-    }
+    // void OnTriggerEnter(Collider other) 
+    // {
+    //     if (other.gameObject.CompareTag ("Player")) {
+    //         // animator.SetTrigger("DestroyCube");
+    //         transform.parent.gameObject.SetActive(false);
+    //         transform.parent.gameObject.Kill();
+    //     }
+    // }
 }

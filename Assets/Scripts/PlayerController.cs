@@ -72,18 +72,19 @@ public class PlayerController : MonoBehaviour
 
                 if(GameObject.ReferenceEquals(other.gameObject, objet)) {
 
-                    Color c = other.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
-                    GetComponent<Renderer>().material.color = c;
+                    // Color c = other.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
+                    // GetComponent<Renderer>().material.color = c;
                     // Debug.Log("color: "+c);
 
                     // animator.ResetTrigger("Run");
-                    animator.ResetTrigger("GrowUp");
-                    animator.SetTrigger("GrowUp");
+                    //animator.ResetTrigger("GrowUp");
+                    //animator.SetTrigger("GrowUp");
 
                     //Debug.Log(inputManager.cubeList.IndexOf(objet));
-                    // other.gameObject.SetActive(false);
+                    //other.gameObject.SetActive(false);
                     inputManager.cubeList.RemoveAt(inputManager.cubeList.IndexOf(objet));
-                    //objet.Kill();
+                    // objet.gameObject.SetActive(false);
+                    // objet.Kill();
 
                     count = count + 1;
                     SetCountText ();

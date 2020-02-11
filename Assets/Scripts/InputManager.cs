@@ -29,7 +29,7 @@ public class InputManager : MonoBehaviour
                 if (hit.collider != null)
                 {
                 //    Debug.Log(hit.point);
-                   cubeList.Add(cube.Spawn(hit.point + new Vector3(0.0f, 0.5f, 0.0f)));
+                   cubeList.Add(cube.Spawn(hit.point));
                 }
             }
         }
